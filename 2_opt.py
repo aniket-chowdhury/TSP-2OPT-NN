@@ -47,6 +47,7 @@ seed(0)
 shuffle(berlin_52)
 
 route, dist = nearest_neighbour(berlin_52)
+print("Distance from Nearest Neighbour:",dist)
 for i in range(len(berlin_52)):
     for j in range(i,len(berlin_52)):
         new_route=opt_2_swap(route[:],i,j)
@@ -55,7 +56,7 @@ for i in range(len(berlin_52)):
         if(new_dist<dist):
             dist=new_dist
             route=new_route
-    print(i,j,new_dist)
 
 
-print(route_dist(route,berlin_52))
+print("Distance after 2-Opt Approach:",route_dist(route,berlin_52))
+# print(sum(list(set(route))))
